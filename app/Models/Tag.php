@@ -9,4 +9,8 @@ class Tag extends Model
     //
     protected $table='tags';
     protected $filltable=['name'];
+
+    public function Articles(){
+      return $this->belongsToMany('App\Models\Article');
+    }
 }

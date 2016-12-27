@@ -11,9 +11,12 @@ class Article extends Model
 
 
    public function category(){
-     return $this->belogsTo('App\Models\Category');
+     return $this->belongsTo('App\Models\Category');
    }
    public function user(){
-     return $this->belogsTo('App\Models\User');
+     return $this->belongsTo('App\Models\User');
+   }
+   public function tags(){
+     return $this->belongsToMany('App\Models\Tag');
    }
 }
