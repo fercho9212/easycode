@@ -8,6 +8,10 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
+        {{!! Html::style('bower_components/bootstrap/dist/css/bootstrap.min.css')!!}}
+        {{!! Html::style('bower_components/bootstrap-material-design/dist/bootstrap-material-design.min.css')!!}}
+
+
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
@@ -92,4 +96,7 @@
             </div>
         </div>
     </body>
+    {{!! Html::script('bower_components/jquery/dist/jquery.min.js')!!}}
+    {{!! Html::script('bower_components/bootstrap/dist/js/bootstrap.min.js')!!}}
+    {{!! Html::script('bower_components/bootstrap-material-design/dist/js/material.min.js')!!}}
 </html>

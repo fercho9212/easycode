@@ -1,0 +1,13 @@
+{
+  "name": "easycode",
+  "homepage": "easycode.app",
+  "authors": [
+    "ferney <ferney9212@gmail.com>"
+  ],
+  "description": "package fornend for proyect easycode",
+  "main": "",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
