@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -100,3 +101,11 @@
     {{!! Html::script('bower_components/bootstrap/dist/js/bootstrap.min.js')!!}}
     {{!! Html::script('bower_components/bootstrap-material-design/dist/js/material.min.js')!!}}
 </html>
+=======
+@extends('admin.template.main')
+@section('title','Home')
+@section('content')
+  <h3>Holaaa esto es bootstrap</h3>
+  <a href="" class="btn btn-success">Soy un boton de bootstrap </a>
+@endsection
+>>>>>>> myFix
