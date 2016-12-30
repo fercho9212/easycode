@@ -83,7 +83,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                  this is breanch TEST
+                  THIS IS A TEST
                 </div>
 
                 <div class="links">
