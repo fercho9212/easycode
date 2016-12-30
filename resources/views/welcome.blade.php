@@ -8,7 +8,7 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
-        {{!! Html::style('bower_components/bootstrap/dist/css/bootstrap.min.css')!!}}
+        {{!! elixir('node_modules/bootstrap/dist/css/bootstrap.css')!!}}
         {{!! Html::style('bower_components/bootstrap-material-design/dist/bootstrap-material-design.min.css')!!}}
 
 
