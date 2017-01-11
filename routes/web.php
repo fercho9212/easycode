@@ -21,3 +21,7 @@ Route::group(['prefix'=>'articles'],function (){
     'as'=>'articlesview'
   ]);
 });
+
+Route::group(['prefix'=>'admin'],function(){
+   Route::resource('users','Admin\UsersController');
+});
