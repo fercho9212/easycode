@@ -34,7 +34,7 @@
                   @endif
 
               <td>
-                  <a href="#" class="waves-effect waves-light btn-floating btn green darken-3"><i class="material-icons">mode_edit</i></a>
+                  <a href="{{route('users.edit',$user->id)}}" class="waves-effect waves-light btn-floating btn green darken-3"><i class="material-icons">mode_edit</i></a>
                   <a href="{{route('users.destroy',$user->id)}}" class="waves-effect waves-light btn-floating btn red darken-4"><i class="material-icons">delete_forever</i></a>
               </td>
             </tr>
