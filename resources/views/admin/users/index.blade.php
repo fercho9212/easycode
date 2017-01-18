@@ -9,12 +9,13 @@
     </div>
 @endif
 
+
   <table id="table_id" class="display bordered">
         <thead>
           <tr>
               <th data-field="id">Nrerame</th>
-              <th data-field="name">Item Name</th>
-              <th data-field="name">Item Name</th>
+              <th data-field="name">Correo</th>
+              <th data-field="name">Nombre</th>
               <th data-field="price">Item Price</th>
               <th data-field="price">Item Price</th>
           </tr>

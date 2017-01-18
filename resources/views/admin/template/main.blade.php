@@ -15,6 +15,7 @@
     <main>
       <section>
         <div class="container">
+            @include('admin.template.components.errors')
             @yield('content')
         </div>
       </section>
