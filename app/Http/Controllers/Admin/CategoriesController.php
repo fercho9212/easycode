@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Models\Category;
 use Laracasts\Flash\Flash;
-use App\Http\Requests\UserRequest;
+use App\Http\Requests\CategoryRequest;
 
-class UsersController extends Controller
+class CategoriesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +17,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users= User::All();
-
-        return view('admin.users.index')->with('users',$users);
-
+        dd('this is index');
     }
 
     /**
@@ -30,7 +27,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return View('admin.users.create');
+        return view('admin.categories.create');
     }
 
     /**
@@ -39,14 +36,14 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(UserRequest $request)
+    public function store(CategoryRequest $request)
     {
+        $category=new Category($request->all());
+        $category->save();
+        Flash::info('La categoria '.$category->name.' Se registro');
+        return redirect()->route('categories.index');
 
-         $user=new User($request->all());
-         $user->password=bcrypt($request->password);
-         $user->save();
-         Flash::info('Se a registrado Correctamente'.$user->name."jsj");
-         return redirect()->route('users.index');
+
     }
 
     /**
@@ -68,8 +65,7 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $user=User::find($id);
-        return view('admin.users.edit')->with('user',$user);
+        //
     }
 
     /**
@@ -81,12 +77,7 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user=User::find($id);
-        $user->fill($request->all());
-        $user->save();
-
-        Flash::warning('El usuario '.$user->name.' ha sido editado');
-        return redirect()->route('users.index');
+        //
     }
 
     /**
@@ -97,9 +88,6 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        $user=User::find($id);
-        $user->delete();
-        Flash::error('El usuario'.$user->name.'Ha sido borrado');
-        return redirect()->route('users.index');
+        //
     }
 }

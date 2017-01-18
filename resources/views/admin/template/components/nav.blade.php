@@ -4,8 +4,8 @@
     <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Users<i class="material-icons right">arrow_drop_down</i></a></li>
-      <li><a href="badges.html">Components</a></li>
-      <li><a href="collapsible.html">JavaScript</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Artículos<i class="material-icons right">arrow_drop_down</i></a></li>
+      <li><a href="collapsible.html"></a></li>
     </ul>
   </div>
 
@@ -20,28 +20,42 @@
       <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
     </div></li>
     <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-    <li><a href="#!">Second Link</a></li>
     <li><div class="divider"></div></li>
     <li><a class="subheader">Subheader</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
     <li class="no-padding">
         <ul class="collapsible collapsible-accordion">
           <li>
-            <a class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Users</a>
+            <a class="collapsible-header">Users<i class="material-icons">arrow_drop_down</i></a>
             <div class="collapsible-body">
               <ul>
                 <li><a href="{{ route('users.create')}}">Create</a></li>
                 <li><a href="{{ route('users.index')}}">listar</a></li>
-                <li><a href="#!">Third</a></li>
-                <li><a href="#!">Fourth</a></li>
               </ul>
             </div>
           </li>
         </ul>
-      </li>
+    </li>
+    <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li>
+            <a class="collapsible-header">Articulos<i class="material-icons">arrow_drop_down</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="{{ route('users.create')}}">Create</a></li>
+                <li><a href="{{ route('users.index')}}">listar</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+    </li>
 
 </ul>
 <!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
+  <li><a href="{{ route('users.index') }}">List</a></li>
+  <li><a href="{{ route('users.create') }}">Create</a></li>
+</ul>
+<ul id="dropdown2" class="dropdown-content">
+  <li><a href="{{ route('users.index') }}">List</a></li>
   <li><a href="{{ route('users.create') }}">Create</a></li>
 </ul>
