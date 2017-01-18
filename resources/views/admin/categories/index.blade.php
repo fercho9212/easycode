@@ -1,1 +1,32 @@
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+@extends('admin.template.main')
+@section('content')
+  @if (session()->has('flash_notification.message'))
+      <div class="alert alert-{{ session('flash_notification.level') }}">
+          {!! session('flash_notification.message') !!}
+      </div>
+  @endif
+
+
+    <table id="" class="display bordered">
+          <thead>
+            <tr>
+                <th data-field="id">Número</th>
+                <th data-field="name">Category</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            @foreach ($categories as $category)
+              <tr>
+                <td>{{ $category->id }}</td>
+                <td>{{ $category->name }}</td>
+                <td>
+                    <a href="{{route('categories.edit',$category->id)}}" class="waves-effect waves-light btn-floating btn green darken-3"><i class="material-icons">mode_edit</i></a>
+                    <a href="{{route('categories.destroy',$category->id)}}" class="waves-effect waves-light btn-floating btn red darken-4"><i class="material-icons">delete_forever</i></a>
+                </td>
+              </tr>
+            @endforeach
+          </tbody>
+
+        </table>
+@endsection

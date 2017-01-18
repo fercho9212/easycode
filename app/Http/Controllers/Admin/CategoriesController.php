@@ -17,7 +17,9 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        dd('this is index');
+        $categories=Category::all();
+
+        return view('admin.categories.index')->with('categories',$categories);
     }
 
     /**
@@ -42,8 +44,6 @@ class CategoriesController extends Controller
         $category->save();
         Flash::info('La categoria '.$category->name.' Se registro');
         return redirect()->route('categories.index');
-
-
     }
 
     /**
@@ -65,7 +65,8 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category=Category::find($id);
+        return view('admin.categories.create')->with('category',$category);
     }
 
     /**
@@ -75,9 +76,14 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CategoryRequest $request, $id)
     {
-        //
+      $category=Category::find($id);
+      $category->fill($request->all());
+      $category->save();
+
+      Flash::info('The category '.$category->name.' upload sucefull');
+      return redirect()->route('categories.index');
     }
 
     /**
@@ -88,6 +94,9 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category=Category::find($id);
+        $category->delete();
+        Flash::error('La categoria '.$category->name.' it is Delete');
+        return redirect()->route('categories.index');
     }
 }
