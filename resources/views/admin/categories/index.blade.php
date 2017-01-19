@@ -29,4 +29,7 @@
           </tbody>
 
         </table>
+        <div class="center">
+          {!! $categories->render() !!}
+        </div>
 @endsection
