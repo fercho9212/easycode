@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::group(['prefix'=>'articles'],function (){
   Route::get('view/{article?}',[
@@ -34,3 +31,8 @@ Route::group(['prefix'=>'admin'],function(){
      'as'   => 'categories.destroy'
    ]);
 });
+Route::get('login','Login\LoginController@login');
+Route::post('login',[
+  'uses' => 'Login\LoginController@postLogin',
+  'as'   => 'login'
+]);
