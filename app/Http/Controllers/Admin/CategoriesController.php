@@ -15,6 +15,11 @@ class CategoriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     public function __construct()
+     {
+         $this->middleware('auth');
+     }
+     
     public function index()
     {
         $categories=Category::orderBy('id','ASC')->paginate(2);

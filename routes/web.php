@@ -26,13 +26,21 @@ Route::group(['prefix'=>'admin'],function(){
      'uses' => 'Admin\UsersController@destroy',
      'as'   => 'users.destroy'
    ]);
-   Route::get('categories/{id}/destroy',[
+
+Route::get('categories/{id}/destroy',[
      'uses' => 'Admin\CategoriesController@destroy',
      'as'   => 'categories.destroy'
    ]);
 });
+
+
+
 Route::get('login','Login\LoginController@login');
 Route::post('login',[
   'uses' => 'Login\LoginController@postLogin',
   'as'   => 'login'
 ]);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
